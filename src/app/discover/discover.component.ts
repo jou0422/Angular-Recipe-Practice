@@ -32,20 +32,20 @@ export class DiscoverComponent {
 
   recipes: RecipeDetail[] = Recipes;
 
-  noRecipesFound:boolean = false;
+  noRecipesFound: boolean = false;
 
 
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute,
-    private router:Router
+    private router: Router
   ) {
     this.filters.length > 0; {
       this.filterDisplay = true;
     }
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.getRecipes();
     this.ingredients.sort((a, b) => a.localeCompare(b));
     this.types.sort((a, b) => a.localeCompare(b));
@@ -53,18 +53,18 @@ export class DiscoverComponent {
 
     // 從 URL 參數中獲取 tag
     this.route.queryParams.subscribe(parama => {
-      if (parama['hashtag']){
+      if (parama['hashtag']) {
         // 自動選擇該 hashtag
         this.selectHashtag(parama['hashtag']);
       }
     })
   }
 
-  selectHashtag(filter:string){
+  public selectHashtag(filter: string) {
     this.onClickSelectTag('types', filter)
-}
+  }
 
-  onClickSelectTag(type: string, selectedItem: string): void {
+  public onClickSelectTag(type: string, selectedItem: string): void {
     // let result: string = '';
     // if (type === 'types' || type === 'cuisines') {
     //   result = `#${selectedItem}`;
@@ -81,18 +81,18 @@ export class DiscoverComponent {
    * 用 Number() 把 string 轉換為 number
    * @returns finalRecipe
    */
-  findRecipe(): RecipeDetail[] {
+  private findRecipe(): RecipeDetail[] {
     let finalRecipe = this.recipes.filter(res =>
       this.filters.every(ele => {
         if (ele.Item === 'types' || ele.Item === 'cuisines') return res.hashtag.includes(ele.SelectedItem);
         if (ele.Item === 'cooktime') return res.timeMin === Number(ele.SelectedItem);
         if (ele.Item === 'ingredients') return res.ingredients.some(item => item.item.includes(ele.SelectedItem))
-          return false; // 如果上述條件都不符合，返回 false
+        return false; // 如果上述條件都不符合，返回 false
       })
     )
-    if (finalRecipe.length === 0){
+    if (finalRecipe.length === 0) {
       this.noRecipesFound = true;
-    }else{
+    } else {
       this.noRecipesFound = false;
     }
     return finalRecipe;
@@ -102,7 +102,7 @@ export class DiscoverComponent {
   * 用 splice() 刪除指定單一 filter，先重置成 default 食譜，再進行一次篩選
   * @param index >> 從該項目開始，刪除 1 項，即刪除自己
   */
-  removeSingleFilter(index: number) {
+  public removeSingleFilter(index: number) {
     this.filters.splice(index, 1);
     this.getRecipes();
     this.recipes = this.findRecipe();
@@ -112,13 +112,13 @@ export class DiscoverComponent {
   /**
    * splice(0) >> 從第 1 項開始刪除所有元素
    */
-  clearAllFilters() {
+  public clearAllFilters() {
     this.filters.splice(0);
     this.getRecipes();
   }
 
 
-  checkDuplicate(selectedItem: string): boolean {
+  public checkDuplicate(selectedItem: string): boolean {
     const result: FilterItem[] = this.filters.filter(res => res.SelectedItem === selectedItem);
     if (result.length > 0) {
       return true;
@@ -129,17 +129,10 @@ export class DiscoverComponent {
 
 
 
-  getRecipes(): void {
+  private getRecipes(): void {
     this.recipeService.getRecipes()
       .subscribe(recipes => this.recipes = recipes);
     // .subscribe(recipes => this.recipes = recipes.slice(0, 5)) // 回傳第1~5個
   }
-
-  onClickHashtag(filter:string){
-    this.router.navigate(['discover'], {
-      queryParams: { hashtag: filter }
-    })
-  }
-
 
 }
