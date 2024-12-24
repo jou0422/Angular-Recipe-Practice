@@ -1,0 +1,64 @@
+
+.overflow{
+  width: 240px;
+  max-height: 300px;
+  overflow-y:auto;
+}
+
+.card{
+  max-width: 380px;
+  max-height: 380px;
+
+  &:hover{
+      scale: 102%;
+      h4{
+          text-decoration: underline 1px;
+          cursor: pointer;
+      }
+  }
+}
+
+.card-img{
+height: 260px;
+background-size: cover;
+background-position:center;
+cursor: pointer;
+}
+
+@media (max-width: 992px) {
+.card-img{
+  height: 220px;
+}
+}
+
+@media (max-width: 767px) {
+  .card{
+      width: auto;
+  }
+  .overflow{
+    width: 98%;
+  }
+}
+
+//
+
+.row{
+  margin: 0;
+}
+
+.body-div{
+  .col{
+    margin-bottom: 30px;
+  }
+}
+
+.bi-exclamation-circle{
+  font-size: 35px;
+  color: #102C57;
+}
+
+.exclamation{
+  margin-bottom: 1%;
+}
+
+

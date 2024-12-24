@@ -1,0 +1,2037 @@
+// theme color
+$blue:          #102C57;
+$milktea:       #DAC0A3;
+$milktea-100 :  #D0B8A8;
+$lightmk:       #EADBC8;
+$milk:          #F8F0E5;
+$lightbl:       #68B0D8;
+$red:           #B73737;
+$grey:          #828282;
+$black:         #000000;
+$white:         #ffffff;
+
+// font style
+// web title
+h1{
+    font-family: Montserrat;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+// title
+h2{
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: bold;
+    color: $blue;
+    margin-bottom: 15px;
+}
+
+// sub title
+h3{
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    color: $grey;
+    margin: 0 0 0 0;
+}
+
+// button
+h4{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+}
+
+// h4 bold ver.
+h5{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+// text
+p{
+    font-family: Montserrat;
+    font-size: 16px;
+    margin: 0 0 0 0;
+}
+
+a{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: normal;
+    text-decoration: none;
+    color: $black;
+}
+
+p{
+    a{
+        font-size: 16px;
+        text-decoration: none;
+        color: $grey;
+    }
+}
+
+input{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    color: $blue;
+}
+
+::placeholder{
+    font-size: 16px;
+}
+
+textarea{
+    font-family: Montserrat;
+    font-size: 16px;
+}
+
+@media (max-width: 992px) {
+  // web title
+  h1{
+      font-size: 48px;
+  }
+
+  // title
+  h2{
+      font-size: 36px;
+  }
+
+  // sub title
+  h3{
+    font-size: 21px;
+  }
+
+  // button
+  h4{
+    font-size: 18px;
+  }
+
+  // h4 bold ver.
+  h5{
+    font-weight: 600;
+  }
+
+  // text
+  p{
+    font-size: 16px;
+  }
+
+}
+
+
+@media (max-width: 767px){
+    // web title
+    h1{
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    // title
+    h2{
+        font-size: 23px;
+        font-weight: 600;
+    }
+
+    // sub title
+    h3{
+        font-size: 17px;
+        font-weight: normal;
+    }
+
+    // main text
+    h4{
+        font-size: 16px;
+    }
+
+    // h4 bold ver.
+    h5{
+        font-weight: 600;
+    }
+
+    // text
+    p{
+        font-size: 16px;
+    }
+
+    a{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 393px){
+    // web title
+    h1{
+        font-size: 23px;
+        font-weight: 600;
+    }
+
+    // title
+    h2{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    // sub title
+    h3{
+      font-size: 16px;
+      font-weight: normal;
+    }
+}
+
+// img shadow
+.shadow{
+    box-shadow: 0px 8px 20px 10px #e5e5e5;
+}
+
+
+
+// modal
+.modal-content{
+    border-radius: 40px;
+}
+
+
+.modal-header{
+    height: 158px;
+    border: 0;
+    padding: 0;
+}
+
+.modal-logo{
+    width: 100px;
+    margin: 35px auto 30px auto;
+}
+
+.modal-body{
+    padding: 0;
+
+    h3{
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: bold;
+        color: #102C57;
+        margin-bottom: 20px;
+    }
+    h4{
+        color: #828282;
+    }
+}
+
+.modal-footer{
+    border: 0;
+    padding: 0;
+}
+
+.modal-footer-btn{
+  margin: 30px auto ;
+}
+
+.modal-check{
+    width: 65px ;
+    margin: 30px auto 25px auto;
+}
+
+@media (max-width: 576px){
+    .modal-content{
+      width: 80%;
+      margin: 0 auto;
+    }
+}
+
+@media (max-width: 393px){
+  .modal-content{
+    scale: 0.8;
+  }
+}
+
+
+
+// button
+.btn{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+@media (max-width: 767px){
+  .btn{
+    font-size: 18px;
+  }
+  .ingredients{
+    tbody{
+      tr{
+        margin: 2% 0;
+      }
+    }
+  }
+}
+
+.btn-outline-primary{
+    background-color: $blue;
+    color: $white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+        background-color: #3A4F7A;
+    }
+
+    &:active:hover{
+        background-color: transparent;
+        border: 1px solid $blue;
+        color: $blue;
+    }
+    &:active:focus{
+        background-color: transparent;
+        border: 1px solid $blue;
+        color: $blue;
+    }
+}
+
+.btn-outline-secondary{
+    border-color: $blue;
+    &:active:hover{
+        background-color: transparent;
+        border: 1px solid $blue;
+    }
+    &:active:focus{
+        background-color: transparent;
+        border: 1px solid $blue;
+    }
+}
+
+.bi-calendar3{
+    color: $blue;
+    &:active:hover{
+        color: $blue;
+    }
+    &:active:focus{
+        color: $blue;
+    }
+
+}
+
+
+.btn-outline-light{
+    width: 120px;
+    height: 60px;
+    background-color: $milktea;
+    color: $white;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+        background-color: $milktea-100;
+        color: $white;
+    }
+
+    &:active:hover{
+        background-color: transparent;
+        border: 1px solid $blue;
+        color: $blue;
+    }
+    &:active:focus{
+        background-color: transparent;
+        border: 1px solid $blue;
+        color: $blue;
+    }
+}
+
+.google-btn{
+    width: 300px;
+    height: 60px;
+    margin: 15px auto 30px auto;
+}
+
+
+.btn-secondary{
+    min-width: 120px;
+    height: 60px;
+    background-color: transparent;
+    color: $blue;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+        background-color: $milktea;
+    }
+    &:active:focus{
+        background-color: $milktea-100;
+    }
+    &:active{
+        background-color: $milktea;
+    }
+    &:disabled{
+        background-color: $milktea;
+    }
+}
+
+.btn.show{
+    background-color: $milktea;
+    border: 0;
+}
+
+
+
+// header
+.search::placeholder{
+    color: $milktea;
+}
+
+.navbar{
+    z-index: 1;
+    background-color: $milk;
+    height: 100px;
+    li{
+      display: flex;
+      align-items: center;
+      margin-right: 40px;
+    }
+}
+
+.container-fluid{
+    padding: 0;
+    max-width: 1620px;
+    margin: 0 auto;
+    background-color: $milk;
+}
+
+.logo{
+    margin-left: 6%;
+    img{
+        max-width: 80px;
+    }
+}
+
+.navbar-nav{
+  --bs-nav-link-hover-color: #102c5781;
+    a{
+        font-size: 20px;
+        color:  $blue;
+    }
+}
+
+.navbar-toggler{
+    color: $milktea;
+}
+
+.nav-btn{
+    background-color: $milktea;
+    font-size: 20px;
+    font-weight: 400;
+    color:  $blue;
+    padding: 5px 10px;
+
+    &:hover{
+        background-color: #D0B8A8;
+    }
+}
+
+.bi-search{
+    background-color: $milktea;
+
+    &:hover{
+        background-color: #D0B8A8;
+    }
+    color: $white;
+    &:active:hover{
+        color: $blue;
+    }
+    &:active:focus{
+        color: $blue;
+    }
+}
+
+.profile{
+  width: 60px ;
+  height: 60px ;
+}
+
+@media (max-width: 992px) {
+  .navbar-toggler{
+    margin-right: 50px;
+  }
+
+  .navbar-collapse{
+    margin-left: 20px;
+  }
+
+  .navbar-nav{
+    form{
+      margin: 8px 0;
+    }
+  }
+
+  .nav-btn{
+    margin: 8px 0;
+  }
+
+  .profile{
+    margin: 8px 0;
+  }
+
+}
+
+@media (max-width: 767px) {
+    .navbar{
+        width: auto;
+        height: 70px;
+    }
+
+    .logo{
+        margin-left: 8%;
+    }
+
+    .logo img{
+        width: 50px;
+    }
+
+    .nav-btn{
+        font-size: 17px;
+        margin: 5px 0;
+    }
+
+    .navbar-nav{
+        a{
+            font-size: 17px;
+            padding: 5px;
+        }
+    }
+
+    .navbar-toggler{
+        margin-right: 8%;
+    }
+
+    .navbar-collapse{
+    margin: 13px 20px;
+    }
+
+    .ms-5{
+        margin-left: 0 !important;
+    }
+}
+
+
+// landing page
+
+
+.landing-img{
+    height: 920px;
+    max-width: 1920px;
+    margin: auto auto;
+    background-size: cover;
+    background-position:top center;
+    background-image: url('/assets/pics/landing2.jpg');
+    background-repeat: no-repeat;
+}
+
+.landing-text{
+  position: relative;
+  top:38%;
+  padding-top: 12%;
+  h1{
+      color:$black;
+      margin-bottom: 40px ;
+  }
+
+  h3{
+      color: $black;
+      margin-bottom: 40px ;
+  }
+}
+
+@media (max-width: 992px) {
+.landing-img{
+    height: 750px;
+}
+
+}
+
+@media (max-width: 767px) {
+    .landing-img{
+        height: 400px;
+    }
+
+    .landing-text{
+      top:30%;
+      h1{
+        margin-bottom: 20px;
+      }
+      h3{
+        margin-bottom: 20px;
+      }
+    }
+
+    .btn{
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 393px){
+    .landing-img{
+        max-height: 350px;
+        background-size: 190%;
+        background-position: 48% 15% ;
+    }
+    .landing-text{
+        padding-top: 20% ;
+
+        h1{
+            margin-bottom: 12px ;
+        }
+
+        h3{
+            margin-bottom: 15px ;
+        }
+    }
+}
+
+
+// hot recipes
+.body-div{
+    max-width: 1620px;
+    margin: 4% auto;
+    padding: 0 2%;
+}
+
+.hot-row{
+  margin: 4% auto;
+}
+
+.card-body{
+    padding: 5% 8%;
+    h4{
+        padding: 8px 0;
+        margin: 0;
+    }
+}
+
+.card-text{
+    margin-bottom: 0;
+}
+
+.hashtag{
+    margin-right: 2%;
+}
+
+@media (max-width: 992px) {
+  .body-div{
+    padding: 0 5%;
+    .row{
+        margin: 30px 0 25px 0;
+    }
+    .col{
+        margin: 0 0 25px 0;
+    }
+}
+}
+
+@media (max-width: 767px) {
+  .hot-row{
+    margin: 30px 0 25px 0;
+  }
+
+  .hot-col{
+    margin: 0 0 25px 0;
+  }
+}
+
+@media (max-width: 393px){
+  .hot-row{
+    margin: 25px 0 20px 0;
+  }
+
+  .hot-col{
+    margin: 0 0 20px 0;
+  }
+}
+
+
+// recommendation
+.mySwiper{
+    margin: 50px auto 80px auto;
+}
+
+swiper-container{
+    --swiper-pagination-color: #DAC0A3;
+    --swiper-pagination-bullet-size: 25px;
+    --swiper-pagination-bullet-horizontal-gap: 15px;
+    --swiper-pagination-bullet-inactive-color: #EADBC8;
+    --swiper-pagination-bullet-inactive-opacity: 0.7;
+    --swiper-pagination-bottom: 0px;
+    height: 450px;
+}
+
+@media (max-width: 767px) {
+    .mySwiper{
+        margin: 30px auto 50px auto;
+    }
+    swiper-container{
+        height: 350px;
+        --swiper-pagination-bullet-size: 15px;
+    }
+}
+
+@media (max-width: 393px){
+    .mySwiper{
+        margin: 30px auto 30px auto;
+    }
+    swiper-container{
+        height: 300px;
+    }
+}
+
+
+// footer
+.footer-bg{
+    background-color: $blue;
+}
+
+.footer{
+    max-width: 1620px;
+    margin: auto auto;
+    color: $white;
+    padding: 2% 5%;
+    .row{
+        margin: 0 0;
+    }
+    i{
+        font-size: 35px;
+    }
+}
+
+.footer-logo{
+  margin: 0 2%;
+}
+
+.icon{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  img{
+    width: 155px ;
+  }
+}
+
+
+.bi-facebook, .bi-youtube, .bi-instagram{
+    color: $lightmk;
+}
+
+.footer-text{
+    h5{
+        margin: 0 0 0 0;
+    }
+
+    li{
+        margin: 10% 0;
+    }
+}
+
+.footer-text li a{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    color: $white;
+}
+
+
+
+
+// about
+// about-lanidng page
+.about{
+    height: 920px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/assets/pics/pic_1.jpg');
+    background-repeat: no-repeat;
+    padding: 15% 0 0 20%;
+
+    img{
+        height: 60%;
+    }
+}
+
+
+// about-how to
+.how {
+    .how-subtitle{
+        margin-bottom: 5%;
+    }
+    p{
+        font-family: Montserrat;
+        font-size: 40px;
+        font-weight: normal;
+        color: $blue ;
+        margin-top: 5%;
+    }
+}
+
+
+.circle{
+  margin: 0 1% ;
+  padding: 10% 0;
+}
+
+.step-text{
+    color: $lightbl;
+    font-weight: bold;
+    margin-bottom: 5%;
+    padding: 4% 0;
+}
+
+.intro{
+    color: $black;
+}
+
+.yes{
+    font-family: Montserrat;
+    font-size: 40px;
+    color: $blue;
+    font-weight: bold;
+}
+
+
+// about-who
+.who-bg{
+  background-color:  $milk;
+  margin: 6% auto 0 auto;
+  padding: 5% 6% ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img{
+    max-width: 720px;
+    border-radius: 12px;
+  }
+  .text-center{
+    margin-left: 8%;
+  }
+
+  h4{
+      max-width: 460px;
+      max-height: 380px;
+      text-overflow: ellipsis;
+      margin-top: 8%;
+      overflow-y: scroll;
+  }
+}
+
+
+// about-contact us
+.contact-title{
+    margin-bottom: 4%;
+}
+
+.contact{
+    background-image: url('/assets/pics/contact_bg.png');
+    max-width: 1920px;
+    height: 790px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    padding: 4% 38%;
+}
+
+.contact-form{
+    margin-top: 50px;
+    max-width: 450px;
+    height: auto;
+
+    .mb-3{
+        margin-bottom: 30px;
+    }
+
+    label{
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0;
+        color: $blue;
+        margin-bottom: 5px;
+    }
+
+    .form-control{
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0 0 0 0;
+        color: $blue;
+    }
+
+    .form-control:focus {
+        border-color: $lightbl !important;
+        box-shadow: 0 0 0 5px rgba(104, 176, 216, 0.25) !important;
+    }
+
+    .form-control::placeholder{
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0 0 0 0;
+        color: $grey ;
+    }
+
+    input{
+        height: 50px;
+    }
+
+    textarea{
+        max-height: 200px;
+    }
+}
+
+.mandatory{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    color: $red;
+}
+
+.contact-btn{
+    margin-top: 20px;
+    width: 450px;
+}
+
+.howto{
+  display: flex;
+  justify-content: center;
+}
+
+.use{
+  width: 400px ;
+}
+
+@media (max-width:1528px) {
+  .user-3{
+    margin-top: 12%;
+  }
+}
+
+@media (max-width:992px) {
+  .user-3{
+    margin-top: 0%;
+  }
+  .about{
+    height: 750px;
+    padding: 15% 0 0 12%;
+  }
+  .howto{
+    flex-direction: column;
+  }
+  .step-text{
+    margin-bottom: 3%;
+    padding: 2% 0;
+  }
+  .circle{
+    padding: 5% 0;
+    img{
+      rotate: 90deg;
+    }
+  }
+
+  .who-bg{
+    flex-direction: column;
+    .text-center{
+      margin-left: 0;
+      h2{
+        margin-top: 5%;
+      }
+    }
+  }
+
+  .contact{
+    padding: 8% 25%;
+    height: 700px;
+    background-position: top center;
+}
+  .contact-btn{
+    margin-top: 20px;
+    width: 250px;
+    margin: 20px 90px ;
+}
+  .contact-form{
+    textarea{
+        max-height: 150px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .about{
+    height: 400px;
+    padding: 12% 0 0 15%;
+    img{
+        max-height: 50%;
+      }
+  }
+
+  .who-bg{
+    img{
+      max-width: 500px;
+    }
+    .office{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .contact-btn{
+      width: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-btn{
+    width: 288px;
+    margin: 20px 0;
+  }
+}
+
+
+@media (max-width: 393px){
+  .body-div{
+      margin-top: 30px;
+  }
+
+  .how{
+    p{
+        font-size: 23px;
+    }
+    h3{
+        margin-bottom: 20px;
+    }
+  }
+  .yes{
+    font-size: 23px;
+  }
+
+  .use{
+    width: 100%;
+  }
+
+  .who-bg{
+  height: 700px;
+  img{
+      width: 100% ;
+    }
+  h4{
+      width: 350px;
+    }
+  }
+
+  .contact-btn{
+    width: 195px;
+    margin: 20px 0 ;
+  }
+  .contact-form{
+    textarea{
+    max-height: 180px;
+    }
+  }
+}
+
+
+
+// form
+.form-warning{
+    font-family: Montserrat;
+    color: $red;
+    margin-left: 2%;
+}
+
+.form-check-input:checked{
+    background-color: $blue;
+    border-color: $blue ;
+}
+
+
+
+
+// login
+.login-bg{
+  background-image: url('/assets/pics/login-page.jpg');
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.login{
+    width: 650px ;
+    height: fit-content ;
+    background-color: $white;
+    border-radius: 40px;
+    h4{
+        color: $grey;
+        margin: 0 0 3% 0;
+    }
+}
+
+.solgan{
+    max-width: 240px;
+    margin: 0 0 5% 0;
+    cursor: pointer;
+}
+
+.close{
+  width: 50px;
+  height: 50px;
+  margin: 5% 5% auto auto;
+  cursor: pointer;
+}
+
+.form-check-label{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    color: $grey;
+}
+
+.login-input{
+    max-width: 400px;
+    margin: 0 auto 3% auto ;
+}
+
+.bi-eye-fill, .bi-eye-slash-fill{
+    font-size: 23px;
+    color: $blue;
+}
+
+
+.or::before, .or::after{
+    content:"";
+    display: block;
+    height: 1px;
+    background-color: #999;
+    margin: 0 10px;
+    width: 150px;
+}
+
+.or {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.google{
+    width: 27px;
+    margin-right: 10px;
+}
+
+.sign{
+    margin-left: 20px;
+    color: $blue;
+}
+
+.login-su{
+    width: 300px;
+    margin: 0 auto 5% auto;
+}
+
+
+@media (max-width: 992px){
+  .login{
+      scale: 0.9;
+  }
+}
+
+@media (max-width: 393px){
+  .login-bg{
+    height: 100dvh;
+  }
+
+.login{
+  scale: 0.8;
+    border-radius: 20px;
+    h4{
+      margin-bottom: 5%;
+    }
+  }
+.login-su{
+  margin: 2% auto 7% auto;
+  }
+
+.solgan{
+  scale: 0.9;
+  }
+
+.login-input{
+    width: 350px;
+    margin-bottom: 6%;
+  }
+
+.or::before, .or::after{
+  width: 100px;
+    }
+
+}
+
+
+// forgot password
+.forgotpw-bg{
+  background-image: url('/assets/pics/login-page.jpg');
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.forgotpw{
+  width: 650px ;
+  height:800px ;
+  background-color: $white;
+  border-radius: 40px;
+}
+
+.logo-forgot{
+  max-width: 240px;
+  margin: 25% 0 10% 0;
+}
+
+.goback{
+  width: 70px;
+  height: 70px;
+  margin: 5% 13% auto 5%;
+  cursor: pointer;
+}
+
+
+@media (max-width: 767px){
+  .logo-forgot{
+    margin-bottom: 30%;
+  }
+  .forgotpw{
+    scale: 0.8;
+  }
+}
+
+@media (max-width: 576px){
+  .forgotpw{
+    width: 500px ;
+  }
+  .logo-forgot{
+    margin: 30% auto 20% -30%;
+  }
+}
+
+
+@media (max-width: 393px){
+  .logo-forgot{
+    margin: 45% auto 20% -60%;
+  }
+
+  .goback{
+    margin: 3% auto auto 3%;
+    scale: 0.8;
+  }
+}
+
+
+
+// signup
+.signup-bg{
+  background-image: url('/assets/pics/login-page.jpg');
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.signup{
+    width: 900px ;
+    height: fit-content ;
+    background-color: $white;
+    border-radius: 40px;
+    h4{
+      color: $grey;
+      margin: 0 0 3% 0;
+    }
+}
+
+.signup-close{
+  width: 50px;
+  height: 50px;
+  margin: 3% 5% auto auto;
+  cursor: pointer;
+}
+
+.signup-solgan{
+  max-width: 240px;
+  margin: -3% 0 3% 0;
+  cursor: pointer;
+}
+
+
+.signup-input{
+    max-width: 640px;
+    margin: 0 auto;
+    .form-check{
+        margin-top: 2%;
+        margin-left: 2%;
+    }
+    .row{
+      margin: 3% 0;
+      display: flex;
+      justify-content: center;
+    }
+}
+
+
+// [formgroupname].ng-invalid.ng-touched.ng-dirty label,
+// .control:has(.ng-invalid.ng-touched.ng-dirty) label {
+//     color: #f98b75;
+// }
+
+// [formgroupname].ng-invalid.ng-touched.ng-dirty input,
+// input.ng-invalid.ng-touched.ng-dirty {
+//     background-color: #fbdcd6;
+//     border-color: #f84e2c;
+// }
+
+.form-floating{
+    label{
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        color: $blue;
+    }
+}
+
+.form-floating > input + label:after {
+    background: transparent !important;
+}
+
+@media (max-width: 992px){
+  .signup{
+      scale: 0.9;
+  }
+}
+
+
+@media (max-width: 575px){
+  .col-bottom{
+    margin-top: 3%;
+  }
+}
+
+
+@media (max-width: 393px){
+  .signup{
+    width: fit-content;
+    border-radius: 20px;
+      h4{
+        margin-bottom: 5%;
+      }
+  }
+  .signup-input{
+    margin-bottom: 6%;
+  }
+
+  .signup-solgan{
+    scale: 0.9;
+  }
+}
+
+
+
+
+// recipe
+.breadcrumb{
+margin-bottom: 3%;
+}
+
+.breadcrumb-item{
+    font-family: Montserrat;
+    font-size: 16px;
+    margin: 0 0 0 0;
+    a{
+        font-family: Montserrat;
+        font-size: 16px;
+    }
+}
+
+
+.recipe-page{
+    max-width: 1860px;
+    height: fit-content;
+    margin: 3% auto;
+    padding: 0 3%;
+}
+
+.receipt-header{
+  height: 600px;
+  margin-bottom: 5%;
+}
+
+.recipe-img{
+    max-width: 100%;
+    height: 600px;
+    border-radius: 12px ;
+    background-size: cover;
+    background-position: center;
+}
+
+.recipe-detailed{
+  max-height: 850px;
+  padding-left: 2%;
+
+    h3{
+        margin-top: 7%;
+        color: $black;
+    }
+}
+
+
+.recipe-info{
+    margin-top: 4%;
+    img{
+        height: 30px;
+        margin-right: 6%;
+    }
+}
+
+.bi-heart{
+    transition-timing-function: ease-in;
+    transition-duration: 0.1s;
+    &:hover{
+        scale: 1.08;
+    }
+}
+
+.bi-heart, .bi-heart-fill, .bi-chat-left-dots{
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.bi-heart-fill{
+    color: $red;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    &:hover{
+        scale: 1.08;
+    }
+}
+
+.recipe-intro{
+  max-width: 630px;
+  margin-top: 5%;
+}
+
+// recipe - tab
+
+.nav-tabs{
+    max-width: 450px ;
+    border: none;
+    .nav-link{
+        max-width: 150px;
+        height: 50px;
+
+    }
+}
+
+
+
+
+.recipe-body{
+    margin: 0 auto;
+    .col{
+      padding: 0;
+    }
+}
+
+.tab-content{
+  max-width: 860px;
+  height: fit-content;
+  background-color: $milk;
+  border-radius: 0 12px 12px 12px ;
+}
+
+.thead-darker{
+  background-color:  rgb(208, 184, 168, 0.35) ;
+}
+
+
+.table{
+    // --bs-table-hover-color: yellow;
+    --bs-table-hover-bg: rgb(208, 184, 168, 0.35);
+}
+
+.table-group-divider{
+    border-top-width: 0 ;
+    border-bottom-width: 2px;
+    border-bottom-color: white;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.serve{
+    position: absolute;
+    right: 10%;
+    bottom: 5%;
+    max-width: 200px;
+    h5{
+        margin-right: 15%;
+    }
+}
+
+
+.direction{
+    padding: 5% 10% ;
+    height: 800px;
+    overflow-y: auto;
+    h5{
+        padding-bottom: 30px;
+        margin: 0;
+        color: $lightbl;
+    }
+    p{
+        white-space: pre-line;
+        padding-bottom: 30px;
+    }
+}
+
+.dir-scrollbar{
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $milk;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $lightmk;
+        &:hover{
+            background-color: $milktea;
+        }
+    }
+}
+
+.table{
+    --bs-table-bg: transperant;
+}
+
+
+.ingredients{
+  position: relative;
+  padding: 5% 8%;
+  min-height: 800px ;
+  th{
+      height: 40px;
+      min-width: 80px;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: normal;
+      padding: 1%;
+      vertical-align: middle;
+  }
+  td{
+      height: 40px;
+      font-family: Montserrat;
+      font-size: 16px;
+      padding: 1%;
+  }
+  label{
+      min-width: 100%;
+      vertical-align:middle;
+      line-height: 40px;
+  }
+  tbody{
+    th{
+      width: 60px;
+    }
+  }
+}
+
+
+
+.nutrition{
+    padding: 5% 8%;
+    th{
+        height: 40px;
+        min-width: 80px;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: normal;
+        padding: 1%;
+        vertical-align: middle;
+    }
+    td{
+        height: 40px;
+        font-family: Montserrat;
+        font-size: 16px;
+        padding: 1%;
+        vertical-align: middle;
+    }
+    tbody{
+      th{
+        width: 60px;
+      }
+    }
+}
+
+
+@media (max-width: 393px){
+  .ingredients{
+    padding-bottom: 20%;
+  }
+  .serve{
+    bottom: 3%;
+  }
+}
+
+
+// recipe - comment
+.comment-list{
+  margin: 3% 12%;
+    .comment-overflow{
+      height: 600px;
+      overflow-y: auto;
+    }
+}
+
+
+.persona{
+  height: 70px;
+}
+
+@media (max-width:992px) {
+  .persona{
+    height: 50px;
+    margin-right: 10px;
+  }
+}
+
+.likearea{
+    width: 110px;
+}
+
+.liked{
+    margin-left: auto;
+    margin-right: 20px ;
+}
+
+.comment{
+    background-color: $milk;
+    max-width: 600px ;
+    height: 120px ;
+    border-radius: 12px;
+    padding: 5% 5%;
+    margin-bottom: 5%;
+    text-overflow: ellipsis;
+    div{
+      margin-left: 5%;
+    }
+}
+
+.my-persona{
+  padding: 0;
+  h5{
+    margin-left: 12%;
+  }
+
+}
+
+.comment-like{
+    width: 20px;
+}
+
+.my-comment{
+  background-color: $white;
+  width:100% ;
+  min-height: 197px;
+  border-radius: 12px;
+  padding: 5%;
+  margin: 0;
+  box-shadow: 0px 8px 20px 10px #e5e5e5;
+}
+
+.my-message{
+    width: fit-content;
+    max-height: 120px;
+    border: none;
+    margin: 2% 2%;
+    padding: 2%;
+    textarea{
+      padding: 0 2% ;
+    }
+    &::placeholder{
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0 0 0 0;
+    }
+    &:focus{
+        color: $blue;
+        outline: none ;
+        box-shadow: 0 0 10px 6px rgba(104, 176, 216, 0.25) !important;
+    }
+}
+
+.comment-btn{
+  margin-right: 20%;
+}
+
+@media (max-width: 992px){
+  .receipt-header{
+    height: fit-content;
+  }
+  .recipe-detailed{
+    margin-top: 3%;
+  }
+  .recipe-img{
+    height: 480px;
+  }
+}
+
+@media (max-width: 767px){
+  .recipe-detailed{
+    height: fit-content;
+    margin-top: 3%;
+    h3{
+      font-weight: 500;
+      margin-top: 5%;
+  }
+  }
+  .recipe-info{
+    margin-top: 0%;
+    div{
+      margin-top: 3%;
+    }
+  }
+  .recipe-intro{
+    margin-top: 3%;
+  }
+}
+
+@media (max-width: 393px){
+  .breadcrumb{
+    margin: 3% 0 5% 0;
+  }
+
+  .recipe-img{
+    width: 90dvw;
+    height: 80dvw;
+  }
+
+  .recipe-body{
+    scale: 0.9;
+  }
+
+  .comment-list{
+    scale: 0.95;
+  }
+
+  .recipe-detailed{
+    padding: 3% 5% 0 5%;
+  }
+}
+
+
+// discover
+.discover-header{
+  height:800px ;
+  padding: 0 5%;
+}
+
+.discover-title{
+  justify-items: end;
+  padding-right: 2%;
+  img{
+    max-width: 650px;
+  }
+  h2{
+    color: $grey;
+    margin-top: 10%;
+  }
+}
+
+.discover-img{
+  img{
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 1800px) {
+  .discover-header{
+    height:700px ;
+  }
+  .discover-title{
+    img{
+      max-width: 100%;
+    }
+  }
+  .discover-img{
+    img{
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .discover-header{
+    height: 600px;
+  }
+}
+
+@media (max-width: 767px) {
+  .discover-header{
+    height: 450px;
+  }
+}
+
+@media (max-width: 393px) {
+  .discover-header{
+    flex-direction: column-reverse;
+  }
+  .discover-title{
+    img{
+      max-width: 80vw;
+    }
+  }
+  .discover-img{
+    img{
+      margin: 8% auto 2% 10%;
+      max-width: 80%;
+    }
+  }
+}
+
+.discover-body{
+  max-width: 1620px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: $milk;
+  margin: 0 auto;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .row{
+    width: 100%;
+    height: 60px;
+  }
+}
+
+
+.dropdown{
+    display: flex;
+    align-items: center;
+    button{
+        height: 50px;
+        font-weight: 500;
+    }
+}
+
+
+
+.scrollbar{
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        // -webkit-box-shadow: inset 0 0 5px $milk;
+        background-color: $milk;
+        // background-color: rgba(216, 235, 245);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $lightmk;
+        // background-color: rgb(16, 44, 87, 0.3);
+        // -webkit-box-shadow: inset 0 0 5px $milktea;
+        &:hover{
+            background-color: $milktea;
+            // background-color: rgb(16, 44, 87, 0.5);
+        }
+    }
+}
+
+
+
+.dropdown-menu{
+    width: 250px;
+    border-color:$milktea ;
+    --bs-dropdown-link-active-bg: $milktea-100;
+    cursor: pointer;
+    .overflow-auto{
+        width: 240px;
+    }
+    button{
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: normal;
+        height: 32px;
+    }
+}
+
+
+
+.filter-header{
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    input{
+        margin-left: 10px;
+        color: $blue;
+        border-radius: 5px;
+        &:focus{
+            color: $blue;
+            background-color: transparent;
+            box-shadow: 0 0 0 4px rgba(104, 176, 216, 0.25) !important;
+        }
+    }
+}
+
+.dropdown-divider{
+    border-color: $milktea ;
+}
+
+.filter-srh{
+    background-color: transparent;
+    color: $blue;
+    &:hover{
+        background-color: transparent;
+    }
+}
+
+.dropdown-item{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: normal;
+    color: $blue;
+    &:hover{
+        background-color: $milk;
+    }
+
+}
+
+.dropdown-toggle::after{
+    margin-left: 10PX;
+}
+
+.clear{
+  width: 100px;
+  height: 50px;
+  padding: 0;
+}
+
+.filter-show{
+    max-width: 900px;
+    max-height: 500px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-items{
+    height: 60px;
+    border: 3px solid $milktea;
+    border-radius: 50px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    margin: 0 30px 20px 0;
+    h4{
+        margin-right: 10px;
+        color: $blue;
+        font-weight: 500;
+    }
+}
+
+.delete{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .discover-body{
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 767px) {
+  .discover-body{
+    height: 350px;
+    padding: 2% 0;
+    align-items: start;
+  }
+  .dropdown{
+    button{
+      width: 80%;
+      margin-bottom: 2%;
+    }
+    .dropdown-menu{
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .discover-body{
+    height: 330px;
+  }
+}
+
+@media (max-width: 393px) {
+  .discover-body{
+    height: 310px;
+  }
+}
+
+.no-result{
+  height: 200px;
+  flex-direction: column;
+  margin-bottom: 5%;
+  h4{
+    color: $blue;
+    font-weight: 500;
+  }
+}
+
+
+// search
+.search-header{
+    max-width: 1920px;
+    height:800px ;
+    background-size: 100%;
+    background-image: url('/assets/pics/search-header.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    section{
+        padding: 30% 0 0 12%;
+    }
+    h2{
+        color: $grey;
+    }
+}

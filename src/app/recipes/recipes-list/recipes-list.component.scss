@@ -1,0 +1,28 @@
+.card{
+    width: 380px;
+    height: 350px;
+    &:hover{
+        scale: 102%;
+    }
+}
+
+.card-img{
+    height: 260px;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media (max-width: 767px) {
+    .card{
+        height: 80%;
+    }
+}
+
+.card-body{
+    padding: 30px 20px;
+    cursor: pointer;
+    & :hover{
+        background-color: #F8F0E5;
+        border-radius: 12px;
+    }
+}

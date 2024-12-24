@@ -1,0 +1,56 @@
+<div class="login-bg">
+  <div class="login">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- <div class="row"> -->
+      <div class="d-flex justify-content-end">
+        <img class="close" src="/assets/pics/close.png" alt="" (click)="onClickBackToHome()">
+      </div>
+      <div class="d-flex justify-content-center">
+        <img class="solgan" src="/assets/pics/slogan_1.png" alt="Yes, Chef" routerLink="/home">
+      </div>
+      <h4 class="text-center">Hey, welcome back !</h4>
+
+      <div class="login-input">
+        <input class="form-control login-email" type="email" placeholder="Email" formControlName="email"
+          aria-describedby="emailinvalid">
+        <!-- [formControl]="form.controls.email" -->
+        @if (emailisinvalid) {
+        <div id="emailinvalid" class="form-warning">Please enter a valid email address.</div>
+        }
+      </div>
+      <div class="login-input">
+        <div class="input-group flex-nowrap">
+          <input class="form-control" type="text" placeholder="Password" formControlName="password"
+            aria-describedby="passwordinvalid" type="{{ showPassword ? 'text' : 'password' }}">
+          <span class="input-group-text bi bi-eye-slash-fill"
+            [ngClass]="{'bi-eye-slash-fill': !showPassword, 'bi-eye-fill': showPassword}"
+            (click)="togglePasswordVisibility()"></span>
+        </div>
+        @if (passwordisinvalid) {
+        <!-- <p class="control-error text-center form-te">Please enter at least 8 characters long.</p> -->
+        <div id="passwordinvalid" class="form-warning">Please enter at least 8 characters long.</div>
+        }
+      </div>
+
+      <div class="d-flex align-items justify-content-evenly">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="remember">
+          <label class="form-check-label" for="flexCheckDefault">
+            Remember me
+          </label>
+        </div>
+        <p class="grey"><a routerLink="/forgotpassword">Forgot password?</a></p>
+      </div>
+      <button class="btn btn-outline-light" (click)="onClickLoginBtn()" type="submit" [disabled]="form.invalid">
+        Log In
+      </button>
+      <p class="or">or</p>
+      <button class="btn btn-outline-primary google-btn" type="submit"><img class="google" src="/assets/pics/google.png"
+          alt="">Sign in with Google</button>
+      <div class="d-flex align-items login-su">
+        <p class="grey">Don't have an account?</p>
+        <p class="sign"><a routerLink="/signup">Sign Up</a></p>
+      </div>
+    </form>
+  </div>
+</div>

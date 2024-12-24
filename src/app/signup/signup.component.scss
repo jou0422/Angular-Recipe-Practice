@@ -1,0 +1,29 @@
+.btn-outline-light{
+    width: 180px;
+    margin: 3% auto;
+}
+
+@media (max-width: 576px){
+}
+
+
+
+.input-group{
+    button{
+        &:hover{
+            background-color: #102C57 ;
+        }
+    }
+}
+
+
+a:hover{
+    text-decoration: underline 1px;
+}
+
+
+button:disabled{
+    background-color: #DAC0A3;
+    color: #ffffff;
+}
+

@@ -1,0 +1,74 @@
+<ng-container *ngIf="showHeader && !(isLoggedIn | async)">
+  <nav class="navbar navbar-expand-lg sticky-top shadow">
+    <div class="container-fluid">
+      <a class="logo" routerLink="/home">
+        <img src="/assets/pics/logo.png" alt="Yes, Chef">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li>
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+          <li>
+            <a class="nav-link" routerLink="/discover">Discover</a>
+          </li>
+          <li>
+            <form class="d-flex input-group" role="search">
+              <input class="form-control search" type="text" placeholder="Search Recipes..." aria-label="Search"
+                name="search" [(ngModel)]="search">
+              <button class="btn bi bi-search" type="submit" routerLink="/search" (click)="setKeywordValue()"></button>
+            </form>
+          </li>
+          <li>
+            <button class="btn nav-btn" routerLink="/login">Log in / Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</ng-container>
+
+<ng-container *ngIf="showHeader && (isLoggedIn | async)">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="logo" routerLink="/home">
+        <img src="/assets/pics/logo.png" alt="Yes, Chef">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li>
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+          <li>
+            <a class="nav-link" routerLink="/discover">Discover</a>
+          </li>
+          <li>
+              <form class="d-flex input-group" role="search\">
+                <input class="form-control search" type="text" placeholder="Search Recipes..." aria-label="Search"
+                  name="search" [(ngModel)]="search">
+                <button class="btn bi bi-search" type="submit" routerLink="/search"
+                  (click)="setKeywordValue()"></button>
+              </form>
+          </li>
+          <li>
+            <img class="profile" src="/assets/pics/persona1.png" alt="">
+          </li>
+          <li>
+            <p>Hi, {{userService.userName}}</p>
+          </li>
+          <li>
+            <button class="btn nav-btn" (click)="onClickLogout()">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</ng-container>

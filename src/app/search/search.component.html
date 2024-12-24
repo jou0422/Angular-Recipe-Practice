@@ -1,0 +1,123 @@
+<div class="search-header">
+  <section>
+    <h2>"{{recipeService.searchKeyword | async}}"</h2>
+    <h2>We have found those for you...</h2>
+  </section>
+</div>
+
+<!-- <div class="discover-body ">
+  <div class="fliter">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Ingredient
+      </button>
+      <ul class="dropdown-menu">
+        <li class="fliter-header d-flex flex-row"><i class="bi bi-search fliter-srh"></i>
+          <input class="form-control dropdown-item" placeholder="Search ingredients...">
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <div class="overflow scrollbar">
+          <li *ngFor="let ingredient of ingredients">
+            <button class="dropdown-item" (click)="onClick('ingredients',ingredient)"
+              [disabled]="checkDuplicate(ingredient)">
+              {{ingredient}}
+            </button>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Time
+      </button>
+      <ul class="dropdown-menu">
+        <li class="fliter-header d-flex flex-row"><i class="bi bi-search fliter-srh"></i><input
+            class="form-control dropdown-item" placeholder="Search ingredients..."></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <div class="overflow scrollbar">
+          <li *ngFor="let time of cooktime">
+            <button class="dropdown-item" (click)="onClick('cooktime',time)" [disabled]="checkDuplicate(time)">
+              {{time}}</button>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        #Type
+      </button>
+      <ul class="dropdown-menu">
+        <li class="fliter-header d-flex flex-row"><i class="bi bi-search fliter-srh"></i><input
+            class="form-control dropdown-item" placeholder="Search ingredients..."></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <div class="overflow scrollbar">
+          <li *ngFor="let type of types">
+            <button class="dropdown-item" (click)="onClick('types',type)"
+              [disabled]="checkDuplicate(type)">#{{type}}</button>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        #Cuisine
+      </button>
+      <ul class="dropdown-menu">
+        <li class="fliter-header d-flex flex-row"><i class="bi bi-search fliter-srh"></i><input
+            class="form-control dropdown-item" placeholder="Search ingredients..."></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <div class="overflow scrollbar">
+          <li *ngFor="let cuisine of cuisines">
+            <button class="dropdown-item" (click)="onClick('cuisines',cuisine)"
+              [disabled]="checkDuplicate(cuisine)">#{{cuisine}}</button>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <div class="clear">
+      <button class="btn btn-outline-primary clear" (click)="removeAll()">Clear</button>
+    </div>
+  </div>
+</div>
+
+<-- fliter show -->
+<!-- <ng-container *ngIf="display">
+  <div class="filter-show d-flex flex-wrap">
+    <div class="d-flex d-inline-flex flex-row fliter-items" *ngFor="let filter of filters, let i = index">
+      <h4><ng-container *ngIf="filter.Item === 'types' || filter.Item === 'cuisines'">#</ng-container>
+        {{filter.SelectedItem}}</h4>
+      <img class="delete" src="./assets/pics/close.png" alt="" (click)="remove(i)">
+    </div>
+  </div>
+</ng-container> -->
+<!-- fliter show -->
+
+
+<!-- <div class="body-div">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <div class="col" *ngFor="let recipe of recipes">
+      <div class="card shadow" routerLink="/recipe/{{ recipe.id }}">
+        <div class="card-img" style="background-image: url('{{recipe.thumbnail}}');">
+        </div>
+        <div class="card-body">
+          <div class="d-flex flex-row">
+            <p class="card-text hashtag" *ngFor="let hashtag of recipe.hashtag">#{{ hashtag }}</p>
+          </div>
+          <h4><a routerLink="/recipe/{{ recipe.id }}">{{recipe.name}}</a></h4>
+          <p class="card-text">{{recipe.timeMin}} mins</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

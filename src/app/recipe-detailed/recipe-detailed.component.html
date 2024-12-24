@@ -1,0 +1,185 @@
+<div class="recipe-page" *ngIf="recipe">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="d-flex">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a routerLink="/discover">Recipes</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ recipe.name }}</li>
+    </ol>
+  </nav>
+  <div class="receipt-header">
+    <div class="row row-cols-sm-1 row-cols-md-1 row-cols-lg-auto">
+      <div class="col-lg-6 justify-content-center">
+        <div class="recipe-img" style="background-image: url('{{ recipe.thumbnail }}')"></div>
+      </div>
+      <div class="col-lg-6 recipe-detailed">
+        <h2>{{ recipe.name }}</h2>
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-xl-2 row-cols-xxl-4 recipe-info">
+          <div class="col d-flex align-items-center">
+            <img src="/assets/pics/persona2.png" alt="">
+            <p>{{ recipe.author }}</p>
+          </div>
+          <div class="col d-flex align-items-center">
+            <img src="/assets/pics/add.png" alt="">
+            <p>{{ recipe.date }}</p>
+          </div>
+          <div class="col d-flex align-items-center">
+            <i class="bi bi-heart" style="cursor: pointer" (click)="onClickLikeRecipe(incrementLikes)"
+              [ngClass]="{'bi-heart' : ! likeIncrease, 'bi-heart-fill': likeIncrease }"></i>
+            <p>{{ recipe.likeQty + incrementLikes }} likes</p>
+          </div>
+          <div class="col d-flex align-items-center" (click)="onClickScrollToCommentList()" style="cursor: pointer">
+            <i class="bi bi-chat-left-dots" alt="comments"></i>
+            <p>{{ recipe.commentQty }} comment(s)</p>
+          </div>
+        </div>
+        <h3>Cook Time: {{ recipe.timeMin }} mins</h3>
+        <div class="d-flex flex-row">
+          <h3 class="hashtag" *ngFor="let hashtag of recipe.hashtag">#{{ hashtag }}</h3>
+        </div>
+        <h3>Introduction:</h3>
+        <p class="recipe-intro">
+          {{ recipe.introduction }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-body">
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2">
+      <div class="col">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-ingredients-tab" data-bs-toggle="tab"
+              data-bs-target="#nav-ingredients" type="button" role="tab" aria-controls="nav-ingredients"
+              aria-selected="true">Ingredients</button>
+            <button class="nav-link" id="nav-directions-tab" data-bs-toggle="tab" data-bs-target="#nav-directions"
+              type="button" role="tab" aria-controls="nav-directions" aria-selected="false">Directions</button>
+            <button class="nav-link" id="nav-nutrition-tab" data-bs-toggle="tab" data-bs-target="#nav-nutrition"
+              type="button" role="tab" aria-controls="nav-nutrition" aria-selected="false">Nutrition</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <!-- ingredients -->
+          <div class="tab-pane fade show active ingredients" id="nav-ingredients" role="tabpanel"
+            aria-labelledby="nav-ingredients-tab" tabindex="0">
+            <table class="table table-hover text-center table-borderless">
+              <thead class="thead-darker">
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Metric</th>
+                  <th class="text-left" scope="col">Ingredients</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let ingredients of recipe.ingredients">
+                  <th scope="row">
+                    <input class="form-check-input" type="checkbox" value="" id="{{ ingredients.item }}">
+                  </th>
+                  <td>
+                    <label for="{{ ingredients.item }}" *ngIf="ingredients.metric > 0; else empty">
+                      {{ ingredients.metric }} {{findTypeValue(ingredients.type)}}
+                    </label>
+                    <ng-template #empty><label>-</label></ng-template>
+                  </td>
+                  <td class="text-left"><label for="{{ ingredients.item }}">{{ ingredients.item }}</label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="d-flex align-items-end serve">
+              <h5>Serve</h5>
+              <h5>{{ recipe.serve }}</h5>
+            </div>
+          </div>
+          <!-- direction -->
+          <div class="tab-pane fade direction dir-scrollbar" id="nav-directions" role="tabpanel"
+            aria-labelledby="nav-directions-tab" tabindex="0">
+            <ng-container *ngFor="let step of recipe.step; let i = index">
+              <h5>Step {{i+1}}</h5>
+              <p class="text-break">{{ step }}</p>
+            </ng-container>
+          </div>
+          <!-- nutrition -->
+          <div class="tab-pane fade nutrition" id="nav-nutrition" role="tabpanel" aria-labelledby="nav-nutrition-tab"
+            tabindex="0">
+            <table class="table table-borderless text-center">
+              <thead class="thead-darker">
+                <tr>
+                  <th scope="col">Per serving</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let nutrition of recipe.nutrition">
+                  <td>{{ nutrition.element }}</td>
+                  <td>{{ nutrition.weight }} {{ findTypeValue(nutrition.type) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- comment -->
+      <div class="col" id="commentsList">
+        <h4>What people say...</h4>
+        <div class="comment-list">
+          <div class="comment-overflow dir-scrollbar">
+            <ng-container *ngFor="let comment of recipe.comments; let i = index">
+              <div class="d-flex align-items-center comment">
+                <a><img class="persona" src="/assets/pics/persona2.png" alt=""></a>
+                <div>
+                  <h5>{{comment.persona}}</h5>
+                  <p>{{comment.comment}}</p>
+                </div>
+                <i class="bi bi-heart liked" style="cursor: pointer" (click)="onClickLikeComment(i)"
+                  [ngClass]="{'bi-heart' : comment.isLike === 0, 'bi-heart-fill': comment.isLike === 1}"></i>
+                <p class="comment-like">{{comment.like}}</p>
+                <ng-template #noShow>
+                  <p class="comment-like"></p>
+                </ng-template>
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="row my-comment row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-1 row-cols-xl-3">
+            <div class="col d-flex align-items-center my-persona">
+              <a><img class="persona" src="/assets/pics/persona1.png" alt=""></a>
+              <h5>Me</h5>
+            </div>
+            <div class="col">
+              <form [formGroup]="form">
+                <textarea class="my-message" id="my-message" placeholder="Leave the comment..." rows="3"
+                  formControlName="comment" required formControlName="comment"
+                  (click)="onClickNeedToLogin()"></textarea>
+              </form>
+            </div>
+            <div class="col d-flex align-items-end justify-content-end">
+              <button class="btn btn-outline-primary comment-btn" type="submit" (click)="onClickLeaveComment()"
+                [disabled]="form.invalid">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="body-div">
+  <h2 class="text-center">You May Also Like...</h2>
+  <swiper-container class="mySwiper" speed="800" free-mode="true" pagination="true" pagination-clickable="true"
+    grab-cursor="true" [slidesPerView]="slidesPerView" [spaceBetween]="spaceBetween">
+    <swiper-slide class="card shadow" *ngFor="let recipe of otherRecipes">
+      <div class="card-img" style="background-image: url('{{ recipe.thumbnail }}');"
+        routerLink="/recipe/{{ recipe.id }}">
+      </div>
+      <div class="card-body">
+        <div class="d-flex flex-row flex-wrap">
+          <p class="card-text hashtag" *ngFor="let hashtag of recipe.hashtag">#{{ hashtag }}</p>
+        </div>
+        <h4><a routerLink="/recipe/{{ recipe.id }}">{{ recipe.name }}</a></h4>
+        <p class="card-text">{{ recipe.timeMin }} mins</p>
+      </div>
+    </swiper-slide>
+    <div class="swiper-pagination"></div>
+  </swiper-container>
+</div>

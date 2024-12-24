@@ -1,0 +1,89 @@
+<ng-container *ngIf="showFooter">
+  <div class="footer-bg">
+    <div class="row row-cols-sm-1 row-cols-md-1 row-cols-lg-2 footer">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col icon">
+            <a routerLink="/home"><img src="/assets/pics/logo_footer.png" alt="Logo"></a>
+          </div>
+          <div class="col align-content-center social">
+            <ul class="list-unstyled d-flex justify-content-around">
+              <li><i class="bi bi-facebook"></i></li>
+              <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="bi bi-youtube"></i></a></li>
+              <li><i class="bi bi-instagram"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col">
+            <ul class="list-unstyled footer-text">
+              <li>
+                <h5>About</h5>
+              </li>
+              <li><a routerLink="/about" fragment="aboutus">About Us</a></li>
+              <li><a routerLink="/about" fragment="contactus">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="list-unstyled footer-text">
+              <li>
+                <h5>Recipes</h5>
+              </li>
+              <li><a routerLink="/home" fragment="hotRecipes">Hot</a></li>
+              <li><a routerLink="/home"fragment="recommendation">Recommendation</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="list-unstyled footer-text">
+              <li>
+                <h5>Membership</h5>
+              </li>
+              <li><a>Saved Recipes</a></li>
+              <li><a>Add Recipes</a></li>
+              <li><a>Coupons</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- <div class="col-md-7  d-flex justify-content-end">
+          <div class="row">
+            <div class="col">
+              <ul class="list-unstyled footer-text">
+                <li>
+                  <h5>About</h5>
+                </li>
+                <li><a routerLink="/about">About Us</a></li>
+                <li><a routerLink="/about">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="list-unstyled footer-text">
+                <li>
+                  <h5>Recipes</h5>
+                </li>
+                <li><a routerLink="/home">Hot</a></li>
+                <li><a routerLink="/home">Recommendation</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="list-unstyled footer-text">
+                <li>
+                  <h5>Membership</h5>
+                </li>
+                <li><a routerLink="/login">Saved Recipes</a></li>
+                <li><a routerLink="/login">Add Recipes</a></li>
+                <li><a routerLink="/login">Coupons</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> -->
+  </div>
+</ng-container>

@@ -1,0 +1,30 @@
+// our helpers
+.card{
+    width: 380px;
+    height: 350px;
+    &:hover{
+        scale: 102%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card{
+        height: 80%;
+    }
+}
+
+.card-img{
+    height: 260px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.card-body{
+    padding: 30px 20px;
+    cursor: pointer;
+}
+
+button:disabled{
+    background-color: #102C57;
+    color: #ffffff;
+}

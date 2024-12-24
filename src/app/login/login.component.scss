@@ -1,0 +1,37 @@
+.form-control{
+    padding: 5% 5%;
+}
+
+.btn-outline-light{
+    margin: 5% auto;
+}
+
+.google-btn{
+    margin: 5% auto ;
+}
+
+@media (max-width: 393px){
+    .grey{
+        font-size: 16px;
+    }
+}
+
+.input-group-text{
+    background-color: transparent;
+}
+
+a:hover{
+    text-decoration: underline 1px;
+}
+
+[formgroupname].ng-invalid.ng-touched.ng-dirty input,
+input.ng-invalid.ng-touched.ng-dirty {
+    background-color: #fbdcd6;
+    border-color: #f84e2c;
+}
+
+
+button:disabled{
+    background-color: #DAC0A3;
+    color: #ffffff;
+}
